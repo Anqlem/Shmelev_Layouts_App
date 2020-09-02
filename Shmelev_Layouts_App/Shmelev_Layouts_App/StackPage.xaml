@@ -8,7 +8,7 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <StackLayout Orientation="Horizontal">
-                <Button x:Name="b1" Text="Begin" BackgroundColor="#00F0FF" BorderColor="#000000" BorderWidth="7" FontSize="Large" Clicked="b1_Clicked" HorizontalOptions="Start"/>
+                <Button x:Name="b1" Text="Start" BackgroundColor="#00F0FF" BorderColor="#000000" BorderWidth="7" FontSize="Large" Clicked="b1_Clicked" HorizontalOptions="Start"/>
                 <Button x:Name="b2" Text="0" BackgroundColor="#00F0FF" BorderColor="#000000" BorderWidth="7" FontSize="Large" Clicked="b2_Clicked" HorizontalOptions="EndAndExpand"/>
             </StackLayout>
         </StackLayout>
