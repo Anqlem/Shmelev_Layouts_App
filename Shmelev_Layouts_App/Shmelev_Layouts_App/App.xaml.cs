@@ -10,7 +10,7 @@ namespace Shmelev_Layouts_App
         {
             InitializeComponent();
 
-            MainPage = new StackPage();
+            MainPage = new Valgusfoor();
             
         }
 

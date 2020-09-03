@@ -16,7 +16,7 @@ namespace Shmelev_Layouts_App
         {
             InitializeComponent();
         }
-        int clik = 0;
+        int clik = 1;
 
         private void b1_Clicked(object sender, EventArgs e)
         {
