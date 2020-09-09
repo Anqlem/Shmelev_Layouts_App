@@ -12,9 +12,10 @@ namespace Shmelev_Layouts_App
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Valgusfoor2 : ContentPage
     {
-        Label yellow, red, green;
+        Label yellow, red, green, alabel;
         Frame rframe, yframe, gframe;
         Button bt1, bt2;
+        Switch all;
         public Valgusfoor2()
         {
             //InitializeComponent();
@@ -72,19 +73,38 @@ namespace Shmelev_Layouts_App
                 Text = "off",
                 HorizontalOptions = LayoutOptions.End
             };
+            alabel = new Label()
+            {
+                Text = "Все цвета",
+                TextColor=Color.Black,
+                FontSize=18
+            };
+            all = new Switch()
+            {
+                IsToggled = false
+                
+            };
+            StackLayout stackLayout3 = new StackLayout()
+            {
+                Children = { alabel }
+            };
             StackLayout stackLayout2 = new StackLayout()
             {
-                Children = { bt1, bt2 }
+                Children = { bt1, bt2, all }
             };
             StackLayout stackLayout = new StackLayout()
             {
-                Children = { rframe, yframe, gframe, stackLayout2 }
+                Children = { rframe, yframe, gframe, stackLayout2, stackLayout3 }
             };
             stackLayout2.Orientation = StackOrientation.Horizontal;
+            stackLayout3.Orientation = StackOrientation.Horizontal;
             stackLayout2.Margin = new Thickness(90, 0, 0, 0);
-           
+            stackLayout3.Margin = new Thickness(260, 0, 0, 0);
+
             bt1.Clicked += Bt1_Clicked;
             bt2.Clicked += Bt2_Clicked;
+
+            all.Toggled += All_Toggled;
 
             Content = stackLayout;
 
@@ -95,6 +115,23 @@ namespace Shmelev_Layouts_App
             gframe.GestureRecognizers.Add(tap);
 
         }
+
+        private void All_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (all.IsToggled=true)
+            {
+                rframe.BackgroundColor = Color.Red;
+                yframe.BackgroundColor = Color.Yellow;
+                gframe.BackgroundColor = Color.Green;
+            }
+            else if (all.IsToggled = false)
+            {
+                rframe.BackgroundColor = Color.Gray;
+                yframe.BackgroundColor = Color.Gray;
+                gframe.BackgroundColor = Color.Gray;
+            }
+        }
+
         int clicked1 = 0;
         private void Tap_Tapped(object sender, EventArgs e)
         {
