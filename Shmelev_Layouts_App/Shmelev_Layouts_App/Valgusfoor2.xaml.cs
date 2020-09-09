@@ -126,7 +126,7 @@ namespace Shmelev_Layouts_App
             }
             else if (all.IsToggled = false)
             {
-                rframe.BackgroundColor = Color.Gray;ф
+                rframe.BackgroundColor = Color.Gray;
                 yframe.BackgroundColor = Color.Gray;
                 gframe.BackgroundColor = Color.Gray;
             }
